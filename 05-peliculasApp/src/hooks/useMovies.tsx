@@ -41,6 +41,14 @@ export const useMovies = () => {
 
   useEffect(() => {
     getMovies();
+    return () => {
+      setMoviesState({
+        nowPlaying: [],
+        popular: [],
+        topRated: [],
+        upComing: [],
+      });
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
